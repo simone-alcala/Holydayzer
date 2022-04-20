@@ -33,8 +33,8 @@ app.get('/is-today-holiday',(req,res) => {
 })
 
 app.get('/holidays/:month',(req,res) => {
-  const month   = req.params.month;
-  const holiday = holidays.filter(d => d.date.split('/')[0] === month);
+  const month   = parseInt(req.params.month);
+  const holiday = holidays.filter(d => parseInt(d.date.split('/')[0]) === month);
   res.send(holiday);
 })
 
